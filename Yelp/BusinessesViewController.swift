@@ -10,11 +10,12 @@ import UIKit
 
 class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate, UISearchBarDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
     var businesses: [Business]!
-    @IBOutlet weak var searchBar: UISearchBar!
-    
+    var searchBar: UISearchBar!
     var filteredData: [Business]!
+    
+    @IBOutlet weak var tableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
+
+        searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
         searchBar.delegate = self
 
 
@@ -39,16 +44,23 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    // Credit goes to kmolo for search implementation
+    // This method updates filteredData based on the text in the Search Box
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        // When there is no text, filteredData is the same as the original data
-        if searchText.isEmpty {
+        
+        if(filteredData == nil){
             filteredData = businesses
+        }
+        
+        // When there is notext, filteredData is the same as the original data
+        if searchText.isEmpty {
+            businesses = filteredData
         } else {
             // The user has entered text into the search box
             // Use the filter method to iterate over all items in the data array
             // For each item, return true if the item should be included and false if the
             // item should NOT be included
-            filteredData = businesses.filter({(dataItem: Business) -> Bool in
+            businesses = businesses.filter({(dataItem: Business) -> Bool in
                 // If dataItem matches the searchText, return true to include it
                 if dataItem.name!.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil {
                     return true
