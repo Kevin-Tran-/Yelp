@@ -19,6 +19,7 @@
 		BCF5FE361C680CA90098F159 /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5FE351C680CA90098F159 /* BusinessCell.swift */; };
 		BCF5FE381C681FA10098F159 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5FE371C681FA10098F159 /* SwitchCell.swift */; };
 		BCF5FE3A1C6821070098F159 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5FE391C6821070098F159 /* FiltersViewController.swift */; };
+		BCF5FE3C1C6850780098F159 /* InfiniteScrollActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF5FE3B1C6850780098F159 /* InfiniteScrollActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		BCF5FE351C680CA90098F159 /* BusinessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
 		BCF5FE371C681FA10098F159 /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		BCF5FE391C6821070098F159 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
+		BCF5FE3B1C6850780098F159 /* InfiniteScrollActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollActivityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				BCF5FE351C680CA90098F159 /* BusinessCell.swift */,
 				BCF5FE371C681FA10098F159 /* SwitchCell.swift */,
+				BCF5FE3B1C6850780098F159 /* InfiniteScrollActivityView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF5FE3C1C6850780098F159 /* InfiniteScrollActivityView.swift in Sources */,
 				BCF5FE361C680CA90098F159 /* BusinessCell.swift in Sources */,
 				22AAAA9C1AEA1EC300A544AF /* BusinessesViewController.swift in Sources */,
 				BCF5FE3A1C6821070098F159 /* FiltersViewController.swift in Sources */,

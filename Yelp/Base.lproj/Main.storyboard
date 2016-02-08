@@ -114,6 +114,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="addressLabel" destination="TOe-Pb-Sfc" id="aao-bi-DRP"/>
                                             <outlet property="categoriesLabel" destination="gWJ-5m-Dyy" id="8xu-Dt-cEg"/>
@@ -122,6 +123,7 @@
                                             <outlet property="ratingImageView" destination="QsV-fk-5sS" id="vDL-BS-Pg9"/>
                                             <outlet property="reviewsCountLabel" destination="Rn6-CF-EBo" id="34J-AN-Exc"/>
                                             <outlet property="thumbImageView" destination="y4Y-zm-9gM" id="zF8-Lt-Sct"/>
+                                            <outletCollection property="gestureRecognizers" destination="H7q-Bk-rsj" appends="YES" id="YPO-ZQ-XcG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,12 +131,16 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="zDi-nM-RVb" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="AZO-z4-V2T"/>
                             <constraint firstAttribute="trailing" secondItem="zDi-nM-RVb" secondAttribute="trailing" id="D0U-Hh-rlC"/>
                             <constraint firstItem="zDi-nM-RVb" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="top" id="Lo4-ti-ayO"/>
                             <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="zDi-nM-RVb" secondAttribute="bottom" id="prC-Bu-FNc"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="H7q-Bk-rsj" appends="YES" id="TMT-yF-DWi"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Yelp" id="QdO-u0-Fi3">
                         <barButtonItem key="leftBarButtonItem" title="Filters" id="hta-l5-ieK">
@@ -157,6 +163,11 @@
                         <outlet property="searchResultsDelegate" destination="2xI-yr-O5N" id="0cd-sn-5wW"/>
                     </connections>
                 </searchDisplayController>
+                <tapGestureRecognizer id="H7q-Bk-rsj">
+                    <connections>
+                        <action selector="onTap:" destination="2xI-yr-O5N" id="74p-Qu-XG5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1485" y="338"/>
         </scene>
