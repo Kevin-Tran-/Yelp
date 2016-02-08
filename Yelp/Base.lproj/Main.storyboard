@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="184" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zDi-nM-RVb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="184" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zDi-nM-RVb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,6 +129,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zDi-nM-RVb" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="AZO-z4-V2T"/>
+                            <constraint firstAttribute="trailing" secondItem="zDi-nM-RVb" secondAttribute="trailing" id="D0U-Hh-rlC"/>
+                            <constraint firstItem="zDi-nM-RVb" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="top" id="Lo4-ti-ayO"/>
+                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="zDi-nM-RVb" secondAttribute="bottom" id="prC-Bu-FNc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Yelp" id="QdO-u0-Fi3">
                         <barButtonItem key="leftBarButtonItem" title="Filters" id="hta-l5-ieK">
