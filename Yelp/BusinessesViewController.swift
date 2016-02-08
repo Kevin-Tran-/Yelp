@@ -9,7 +9,7 @@
 import UIKit
 
 class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate, UISearchBarDelegate, UIScrollViewDelegate {
-
+    
     var businesses: [Business]!
     var searchBar: UISearchBar!
     var filteredData: [Business]!
@@ -17,7 +17,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     var offsetCount = 20
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     var isMoreDataLoading = false
     var loadingMoreView:InfiniteScrollActivityView?
     
@@ -28,7 +28,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
-
+        
         searchBar = UISearchBar()
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar
@@ -47,7 +47,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             self.tableView.reloadData()
-        
+            
             for business in businesses {
                 print(business.name!)
                 print(business.address!)
@@ -58,7 +58,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     @IBAction func onTap(sender: UITapGestureRecognizer) {
         searchBar.endEditing(true)
     }
-
+    
     // Credit goes to kmolo for search implementation
     // This method updates filteredData based on the text in the Search Box
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -103,7 +103,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
                 loadingMoreView!.startAnimating()
                 
                 // Code to load more results
-                loadMoreData()		
+                loadMoreData()
             }
         }
     }
@@ -141,18 +141,18 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        
         let navigationController = segue.destinationViewController as! UINavigationController
         let filtersViewController = navigationController.topViewController as! FiltersViewController
         
